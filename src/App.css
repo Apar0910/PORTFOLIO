@@ -1,0 +1,193 @@
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  position: sticky;
+  top: 0;
+  background: rgba(5, 7, 15, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.links a {
+  margin-left: 18px;
+  color: #9bb7ff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+.links a:hover {
+  color: white;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #6ea8ff;
+  transition: 0.3s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: radial-gradient(circle at top, #0b1020, #05070f);
+}
+
+.hero {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #8aa4ff;
+}
+
+.grid {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.card {
+  padding: 28px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: left;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110,168,255,0.15), transparent 60%);
+  transform: rotate(25deg);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #6ea8ff;
+}
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: black;
+}
+
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  animation: moveStars 80s linear infinite;
+}
+
+/* Layer 1 stars */
+.stars::before {
+  background-size: 50px 50px;
+  opacity: 0.25;
+}
+
+/* Layer 2 stars (smaller + slower) */
+.stars::after {
+  background-size: 90px 90px;
+  opacity: 0.15;
+  animation-duration: 140s;
+}
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+.popup-content {
+  background: rgba(10, 14, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 16px;
+  width: 420px;
+  color: white;
+  box-shadow: 0 0 30px rgba(100, 150, 255, 0.15);
+  animation: popIn 0.25s ease;
+}
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.popup-content button {
+  margin-top: 15px;
+  padding: 8px 14px;
+  background: #6ea8ff;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background: white;
+}
+html {
+  scroll-behavior: smooth;
+}
