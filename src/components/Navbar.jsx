@@ -1,13 +1,19 @@
+import { NavLink } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav className="nav">
-      <div className="logo">AEROSPACE OPS</div>
+      <NavLink to="/" className="logo">
+        ARuroNex
+      </NavLink>
 
       <div className="links">
-        <a href="#profile">Profile</a>
-        <a href="#projects">Projects</a>
-        <a href="#lab">Lab</a>
-        <a href="#contact">Contact</a>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/lab">Lab</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </div>
     </nav>
   );
